@@ -56,9 +56,21 @@ for i in range(len(all_lines)):
     elif i == len(all_lines):
         f_new.write(l_str) # to not add line break on last line
     else:
-        f_new.write(l_str + "\n")
-        
-       
+        for j in range(len(l_list)):
+            if j == 0: # year
+                f_new.write(l_list[j] + ",")
+            elif j == (len(l_list)-1): # year
+                f_new.write(l_list[j])
+        #for j in l_list:
+            elif "*" in l_list[j]: # treat missing values
+                l_list[j] = "NaN"
+                f_new.write(l_list[j] + ",")
+            else:
+                convert = int(l_list[j]) / 100 * 1.8 # convert values
+                l_list[j] = str(format(convert, ".1f")) # turn into string and format
+                f_new.write(l_list[j] + ",")
+        if i != len(all_lines):
+            f_new.write("\n") # to not add line break on last line   
         
 # close both files
 f_new.close()

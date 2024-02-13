@@ -63,14 +63,18 @@ for i in range(len(all_lines)):
                 f_new.write(l_list[j])
         #for j in l_list:
             elif "*" in l_list[j]: # treat missing values
-                l_list[j] = "NaN"
+                l_list[j] = "NA"
                 f_new.write(l_list[j] + ",")
+            elif l_list[j] == 'NA': # Handle NA values
+                f_new.write('NA,')
             else:
                 convert = int(l_list[j]) / 100 * 1.8 # convert values
                 l_list[j] = str(format(convert, ".1f")) # turn into string and format
                 f_new.write(l_list[j] + ",")
         if i != len(all_lines):
-            f_new.write("\n") # to not add line break on last line   
+            f_new.write("\n") # to not add line break on last line 
+        
+       
         
 # close both files
 f_new.close()

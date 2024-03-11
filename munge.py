@@ -13,7 +13,7 @@ def process_numbers(numbers):
                 processed_numbers.append(num)  # Keep the original number if it's not processed
         except ValueError:
             processed_numbers.append(num)  # Keep the original string if it can't be turned into an integer
-    return processed_numbers
+    return processed_numbers 
 
 
 # open file

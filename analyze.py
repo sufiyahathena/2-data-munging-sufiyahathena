@@ -6,7 +6,7 @@
 # For example, output the average temperature anomaly for the decades: 
 # 1880 to 1889
 # 1890 to 1899
-# 1900 to 1909
+# 1900 to 1909  
 # ...and so on.
 # You are allowed to use the csv module to help parse your CSV data file in the analysis, 
 # but not pandas or any other data parsing or analysis module.
